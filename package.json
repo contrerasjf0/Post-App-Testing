@@ -72,7 +72,11 @@
     "globals":[
       "describe",
       "it",
-      "cy"
+      "cy",
+      "beforeEach",
+      "before",
+      "afterEach",
+      "after"
     ]
   },
   "engines": {
