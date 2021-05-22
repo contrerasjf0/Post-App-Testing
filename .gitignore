@@ -17,4 +17,3 @@ firebase-admin-keys.json
 *.sln
 *.env
 proyecto.zip
-/test
