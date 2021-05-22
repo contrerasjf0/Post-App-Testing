@@ -14,7 +14,8 @@
     "build:test": "cross-env NODE_ENV=test node build/build.js",
     "test:server": "pushstate-server dist",
     "test:init": "npm run test:server",
-    "test:dev": "npm run build:test && run-p --race test:server cypress:open"
+    "test:dev": "npm run build:test && run-p --race test:server cypress:open",
+    "test:clean": "node ./build/clean-test-db.js"
   },
   "dependencies": {
     "firebase": "^5.0.2",
