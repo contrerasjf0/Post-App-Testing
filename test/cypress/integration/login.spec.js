@@ -15,6 +15,7 @@ describe('Login tests', () => {
   it('should sign up a user', () => {
     cy.get('@userData').then((userData) => {
       cy.CreateUser(userData)
+      cy.screenshot('create-user')
     })
   })
 
@@ -22,6 +23,7 @@ describe('Login tests', () => {
     cy.get('@userData').then((userData) => {
       cy.loginUser('non-siggned@user.io', 'qwerty123')
       cy.get('.error-msg').should('be.visible')
+      cy.screenshot('login-failed')
     })
   })
 
@@ -29,11 +31,11 @@ describe('Login tests', () => {
     cy.get('@userData').then((userData) => {
       cy.loginUser(userData.email, userData.password)
       cy.contains('a', 'Dashboard').should('be.visible')
+      cy.screenshot('login-user')
     })
   })
 
   after(() => {
     cy.log('All tests done')
   })
-
 })
